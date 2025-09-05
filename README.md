@@ -1,35 +1,53 @@
-# 🚀 CHRISTIAN'S COMPLETE DEVELOPER PACKAGE
-## Self-Contained NOVAXE Musical Intelligence Platform
-### Everything You Need to Become Productive - Industry Standard Onboarding
+# Christian Developer Package - PHOENIX HUB
 
-[![Production Status](https://img.shields.io/badge/Production-LIVE-brightgreen)](https://millionsongmind.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue)](https://www.typescriptlang.org/)
+## 🌟 CURRENT STATUS
+- **Phoenix Hub**: ✅ Online at https://millionsongmind.com/
+- **ChordCubes**: ✅ Working at https://millionsongmind.com/cubes/
+- **Million Song Mind**: ✅ Working at https://millionsongmind.com/MSM/
+- **Harmonic Oracle**: 🔧 Integration in progress
+- **Melody Lab**: 🔧 Integration in progress
 
----
+## SETUP TIME: 30-45 minutes
 
-# 👋 WELCOME TO YOUR DEVELOPER ECOSYSTEM!
+### Prerequisites
+- Node.js 18+ 
+- npm or pnpm
+- Git
+- Working terminal (if issues, see TROUBLESHOOTING.md)
 
-This package contains **everything you need** to master the NOVAXE Musical Intelligence Platform. It follows industry-standard practices for developer onboarding and is designed to get you productive in **30 minutes or less**.
+### Installation Steps
 
-## 🎯 WHAT'S IN THIS PACKAGE
-
-**Complete Production Systems:**
-- 🎮 **ChordCubes 6.0 V1.50** - 3D harmonic visualization (480KB bundle, 10,686 lines)
-- 🧠 **Million Song Mind React** - Analysis platform (1.57MB bundle, 20,786 lines)  
-- 🎼 **NOVAXE Diamond Angular** - Brain architecture (127,000+ lines, 6 models)
-- 📊 **Harmonic Oracle** - HUV vector intelligence (680,000+ songs)
-
-**Live Production Verification:** https://millionsongmind.com ✅
-
----
-
-# ⚡ 5-MINUTE QUICK START
-
-## Step 1: Verify Production Systems Work
+1. **Clone and Navigate**
 ```bash
-# Check live systems (should all return 200 OK)
+git clone https://github.com/markvandendool/Christian-Developer-Package.git
+cd Christian-Developer-Package
+```
+
+2. **Install Dependencies**
+```bash
+npm install
+cd apps/chordcubes && npm install
+cd ../million-song-mind && npm install
+cd ../..
+```
+
+3. **Start Development Servers**
+```bash
+# Start all apps
+npm run dev:all
+
+# Or start individually
+npm run dev:cubes  # Port 5173
+npm run dev:msm    # Port 5174
+```
+
+## KNOWN ISSUES
+1. MSM production deployment blocked by Vercel Security
+2. Terminal may have issues with pyenv interference
+3. Some asset paths still reference /MSM/
+
+## TROUBLESHOOTING
+See [TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md) for common issues.
 curl -I https://millionsongmind.com
 curl -I https://millionsongmind.com/cubes/
 curl -I https://millionsongmind.com/MSM/
@@ -43,18 +61,22 @@ curl -s https://millionsongmind.com/cubes/main.js | wc -c    # Should be 480140
 # Navigate to this package
 cd CHRISTIAN_DEVELOPER_PACKAGE
 
-# Start local development server
+# Start ChordCubes (port 8000)
 python -m http.server 8000
+
+# In separate terminal, start MSM (port 5173)
+cd apps/million-song-mind
+npm run dev
 
 # Open in browser:
 # http://localhost:8000/apps/chordcubes/     (3D visualization)
-# http://localhost:8000/apps/msm/           (React analysis)
+# http://localhost:5173/MSM/                (React analysis)
 ```
 
 ## Step 3: Test Core Functionality
 - [ ] **ChordCubes:** Click and drag 3D cubes, test audio
-- [ ] **MSM:** Upload a CSV file, verify HUV processing  
-- [ ] **Systems:** Verify all applications load without errors
+- [ ] **MSM:** Upload a CSV file, verify HUV processing
+- [ ] **Systems:** Verify both applications load without errors
 
 **🎉 You're ready to develop! Total setup time: 5 minutes.**
 
@@ -75,22 +97,11 @@ CHRISTIAN_DEVELOPER_PACKAGE/
 │   │   ├── README.md             # ChordCubes documentation
 │   │   └── tech-spec.md          # Technical specification
 │   │
-│   ├── million-song-mind/        # MSM React platform
-│   │   ├── src/                  # React source (20,786 lines)
-│   │   ├── dist/                 # Built application
-│   │   ├── README.md             # MSM documentation  
-│   │   └── architecture.md       # Component architecture
-│   │
-│   ├── novaxe-diamond/           # Angular brain system
-│   │   ├── src/app/models/       # The 6 brain models
-│   │   ├── dist/                 # Built Angular app
-│   │   ├── README.md             # NOVAXE documentation
-│   │   └── brain-architecture.md # Brain model specs
-│   │
-│   └── harmonic-oracle/          # HUV processing system
-│       ├── enrich_data2_to_data3_v7.py  # Main processor
-│       ├── README.md             # Oracle documentation
-│       └── huv-specification.md  # Complete HUV format
+│   └── million-song-mind/        # MSM React platform
+│       ├── src/                  # React source (20,786 lines)
+│       ├── dist/                 # Built application
+│       ├── README.md             # MSM documentation
+│       └── architecture.md       # Component architecture
 │
 ├── 📚 docs/                       # Master documentation
 │   ├── ARCHITECTURE.md           # Complete system architecture
@@ -126,6 +137,7 @@ CHRISTIAN_DEVELOPER_PACKAGE/
 
 ## ChordCubes 6.0 V1.50 - 3D Visualization Engine
 **Location:** `apps/chordcubes/`
+**URL:** http://localhost:8000/apps/chordcubes/
 
 ```javascript
 Key Components:
@@ -146,6 +158,7 @@ Technical Specs:
 
 ## Million Song Mind React - Analysis Platform  
 **Location:** `apps/million-song-mind/`
+**URL:** http://localhost:5173/MSM/
 
 ```typescript
 Key Components:
@@ -162,44 +175,7 @@ Technical Specs:
 - Shadcn/ui + Radix UI components
 - React Three Fiber for 3D integration
 - 1.57MB production bundle (optimized)
-```
-
-## NOVAXE Diamond - Angular Brain Architecture
-**Location:** `apps/novaxe-diamond/`
-
-```typescript
-The 6 Brain Models:
-├── SelectionModel                  # User interaction brain
-├── CurTonalityModel               # Musical key brain  
-├── ConfigModel                    # Configuration brain
-├── AudioModel                     # Audio processing brain
-├── VisualizationModel             # 3D rendering brain
-└── DataModel                      # Musical data brain
-
-Technical Specs:
-- Angular 20.1.4 with RxJS reactive programming
-- 108 observable patterns for state management
-- TonalJS integration (43 points)
-- 88.66% test coverage
-- 127,000+ lines of ultra-pristine code
-```
-
-## Harmonic Oracle - HUV Vector Intelligence
-**Location:** `apps/harmonic-oracle/`
-
-```python
-HUV Vector Format:
-Primary Tuple: total,root,first,second,third
-Color Extensions: dom7|maj7|sus4|add9|alterations
-
-Processing Pipeline:
-├── Final Boss Key Detection        # Optimal Roman mapping
-├── 27-Slot Classification         # Major/Applied/Minor/Special
-├── Inversion Analysis             # Root/1st/2nd/3rd tracking  
-├── Statistical Validation        # Data integrity checks
-└── Data3 Pure CSV Output          # Canonical format
-
-Scale: 680,000+ songs analyzed
+- Runs on port 5173 with base path /MSM/
 ```
 
 ---
@@ -208,9 +184,13 @@ Scale: 680,000+ songs analyzed
 
 ## Daily Development Commands
 ```bash
-# Start everything for development
+# Start ChordCubes
 cd CHRISTIAN_DEVELOPER_PACKAGE
 python -m http.server 8000
+
+# Start MSM (separate terminal)
+cd apps/million-song-mind
+npm run dev
 
 # Health check all systems
 ./tools/health-check.sh
@@ -226,7 +206,8 @@ python -m http.server 8000
 ```bash
 # 1. Make your changes to source code
 # 2. Test locally
-python -m http.server 8000
+# ChordCubes: http://localhost:8000/apps/chordcubes/
+# MSM: http://localhost:5173/MSM/
 
 # 3. Verify production systems still work
 curl -I https://millionsongmind.com
@@ -249,40 +230,6 @@ localStorage.setItem('novaxe-debug', 'true');
 
 ---
 
-# 📚 LEARNING PROGRESSION
-
-## Week 1: Foundation & Setup ✅
-- [ ] Complete 5-minute quick start
-- [ ] Verify all applications load correctly
-- [ ] Upload test CSV to MSM and verify processing
-- [ ] Interact with ChordCubes 3D interface  
-- [ ] Read ARCHITECTURE.md for system overview
-- [ ] Understand HUV vector format basics
-
-## Week 2: Deep Technical Understanding
-- [ ] Study ChordCubes interaction model and physics
-- [ ] Analyze MSM React component hierarchy
-- [ ] Understand the 6 NOVAXE brain models
-- [ ] Master HUV vector specification completely
-- [ ] Review production deployment pipeline
-- [ ] Practice debugging common issues
-
-## Week 3: Active Development
-- [ ] Make first code contribution (bug fix or small feature)
-- [ ] Add comprehensive tests for your changes
-- [ ] Update documentation as needed
-- [ ] Deploy changes to staging environment
-- [ ] Verify production systems unaffected
-
-## Week 4: System Mastery
-- [ ] Lead development of major feature
-- [ ] Optimize performance bottlenecks  
-- [ ] Improve system architecture
-- [ ] Mentor other developers
-- [ ] Contribute to ecosystem improvement
-
----
-
 # 🆘 HELP & TROUBLESHOOTING
 
 ## Common Issues & Solutions
@@ -294,10 +241,11 @@ node --version
 
 # Kill conflicting processes
 pkill -f "python.*http.server"
-pkill -f "node.*serve"
+pkill -f "node.*vite"
 
-# Restart development server
-python -m http.server 8000
+# Restart development servers
+python -m http.server 8000  # For ChordCubes
+cd apps/million-song-mind && npm run dev  # For MSM
 ```
 
 **"CORS errors"**  
@@ -330,9 +278,9 @@ curl -s https://millionsongmind.com/MSM/ | grep main        # Should find React 
 # 🏆 SUCCESS CRITERIA
 
 ## ✅ Developer Package Setup Complete When:
-- [ ] All 4 applications start without errors
+- [ ] Both applications start without errors
 - [ ] Production systems verified and accessible
-- [ ] Local development server functional
+- [ ] Local development servers functional (ports 8000 and 5173)
 - [ ] Can upload and process CSV in MSM
 - [ ] ChordCubes 3D responds to mouse interaction
 - [ ] Health check script passes all tests
@@ -351,7 +299,7 @@ curl -s https://millionsongmind.com/MSM/ | grep main        # Should find React 
 
 **Production Systems:** https://millionsongmind.com (verified operational)  
 **Repository:** `Novaxe-SEB-Million-Song-Mind` (branch: `Christian/Mark`)  
-**Package Version:** Industry Standard Developer Onboarding v1.0  
+**Package Version:** Industry Standard Developer Onboarding v1.1
 
 **Emergency Contacts:**
 - System down: Check Vercel dashboard

@@ -13,8 +13,8 @@ echo "Date: $(date)"
 echo ""
 
 # Configuration
-DEPLOYMENT_DIR="/Users/markvandendool/Novaxe-SEB-Million-Song-Mind/deployment/cubes"
-BACKUP_DIR="/Users/markvandendool/Novaxe-SEB-Million-Song-Mind/deployment/backups/cubes-$(date +%Y%m%d_%H%M%S)"
+DEPLOYMENT_DIR="/Users/markvandendool/Christian-Developer-Package/deployment/cubes"
+BACKUP_DIR="/Users/markvandendool/Christian-Developer-Package/deployment/backups/cubes-$(date +%Y%m%d_%H%M%S)"
 STAGING_SERVER="127.0.0.1:8901"
 PRODUCTION_URL="https://millionsonmind.com/cubes/"
 

@@ -351,7 +351,7 @@ DEPLOYMENT:
 ## **Quick Access Commands**
 ```bash
 # Navigate to your workspace
-cd /Users/markvandendool/Novaxe-SEB-Million-Song-Mind/deployment
+cd /Users/markvandendool/Christian-Developer-Package
 
 # Check production systems
 curl -I https://millionsongmind.com

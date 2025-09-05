@@ -1,8 +1,58 @@
+# Dependencies
 node_modules/
 */node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
 dist/
 build/
 .vite/
+*.tsbuildinfo
+
+# Environment files
 .env*
+
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
 *.log
+nohup.out
+server.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup files
+*-backup.*
+*-old.*
+*.backup
+*.bak
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage
+coverage/
+.nyc_output
+
+# Cache directories
+.cache
+.parcel-cache
+.eslintcache
+
+# Vercel (keep for deployment)
+# .vercel

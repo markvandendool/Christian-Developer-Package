@@ -490,7 +490,7 @@ export function HarmonicChart({ data = [], fileCount, totalSongs, onChordSelect,
           style={{ bottom: 0, left: 0, right: 0 }}
         >
           <div className="flex items-center space-x-2">
-            <div className="w-6 h-6 bg-foreground border border-border rounded"></div>
+            <div className="w-6 h-6 bg-foreground border rounded"></div>
             <span className="tracking-wider">INSTANCES</span>
           </div>
           <div className="flex items-center space-x-6">

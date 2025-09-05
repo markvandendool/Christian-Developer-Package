@@ -96,7 +96,7 @@ export function SongTimelineVisualizer({ song, onSectionTypeFilter }: SongTimeli
         {song.sections.length > 0 ? (
           <div className="space-y-4">
             {/* Timeline visualization */}
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border border-purple-200 dark:border-purple-700">
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border-purple-200 dark:border-purple-700">
               <div className="text-sm font-medium text-purple-700 dark:text-purple-300 mb-3">
                 Song Structure Timeline (click sections to filter)
               </div>
@@ -110,7 +110,7 @@ export function SongTimelineVisualizer({ song, onSectionTypeFilter }: SongTimeli
               {song.sections.map((section, index) => (
                 <div 
                   key={`legend-${section.fullLabel}-${index}`}
-                  className="flex items-center gap-2 p-2 bg-white dark:bg-gray-800 rounded border border-purple-200 dark:border-purple-700"
+                  className="flex items-center gap-2 p-2 bg-white dark:bg-gray-800 rounded border-purple-200 dark:border-purple-700"
                 >
                   <div 
                     className={`w-3 h-3 rounded ${SECTION_COLORS[section.sectionType as keyof typeof SECTION_COLORS] || SECTION_COLORS.progression}`}

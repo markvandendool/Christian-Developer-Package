@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVX/CC/MSM/PH - Application Hub</title>
+    <style>
+        :root {
+            --background: #0d0d1a;
+            --text-primary: #f8f8f8;
+            --text-secondary: #a8a8b8;
+            --accent-primary: #7C3AED;
+            --accent-secondary: #c084fc;
+            --card-bg: #1a1a2e;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .app-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .app-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
+        }
+        
+        .app-card h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--accent-secondary);
+        }
+        
+        .app-card p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .app-card .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+        }
+        
+        .app-card .btn:hover {
+            opacity: 0.9;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #2c2c44;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Phoenix Hub</h1>
+            <p class="subtitle">Your portal to NOVAXE music applications</p>
+        </header>
+        
+        <div class="app-grid">
+            <div class="app-card">
+                <h2>ChordCubes</h2>
+                <p>Explore harmonic relationships in 3D space with this interactive chord visualization tool.</p>
+                <a href="http://localhost:8001" class="btn" target="_blank">Launch ChordCubes 6.0 V1.50</a>
+            </div>
+            
+            <div class="app-card">
+                <h2>Million Song Mind</h2>
+                <p>Advanced music theory analysis and composition powered by AI and deep harmonic understanding.</p>
+                <a href="http://localhost:8002" class="btn" target="_blank">Launch MSM 2.1.0</a>
+            </div>
+            
+            <div class="app-card">
+                <h2>Novaxe</h2>
+                <p>The central platform for NOVAXE ecosystem - manage your music projects and settings.</p>
+                <a href="http://localhost:8003" class="btn" target="_blank">Launch Novaxe Angular 20</a>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem; padding: 1rem; background-color: var(--card-bg); border-radius: 10px;">
+            <h3 style="color: var(--accent-secondary);">Running Application Servers</h3>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+                <tr style="border-bottom: 1px solid #2c2c44;">
+                    <th style="text-align: left; padding: 0.5rem;">Application</th>
+                    <th style="text-align: left; padding: 0.5rem;">URL</th>
+                    <th style="text-align: left; padding: 0.5rem;">Server Type</th>
+                </tr>
+                <tr style="border-bottom: 1px solid #2c2c44;">
+                    <td style="padding: 0.5rem;">Phoenix Hub</td>
+                    <td style="padding: 0.5rem;"><a href="http://localhost:8000" style="color: var(--accent-secondary);" target="_blank">http://localhost:8000</a></td>
+                    <td style="padding: 0.5rem;">Python HTTP Server</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #2c2c44;">
+                    <td style="padding: 0.5rem;">ChordCubes 6.0 V1.50</td>
+                    <td style="padding: 0.5rem;"><a href="http://localhost:8001" style="color: var(--accent-secondary);" target="_blank">http://localhost:8001</a></td>
+                    <td style="padding: 0.5rem;">Python HTTP Server</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #2c2c44;">
+                    <td style="padding: 0.5rem;">MSM 2.1.0</td>
+                    <td style="padding: 0.5rem;"><a href="http://localhost:8002" style="color: var(--accent-secondary);" target="_blank">http://localhost:8002</a></td>
+                    <td style="padding: 0.5rem;">Python HTTP Server (dist)</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem;">Novaxe Angular 20</td>
+                    <td style="padding: 0.5rem;"><a href="http://localhost:8003" style="color: var(--accent-secondary);" target="_blank">http://localhost:8003</a></td>
+                    <td style="padding: 0.5rem;">Python HTTP Server</td>
+                </tr>
+            </table>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 NVX/CC/MSM/PH - Christian Developer Package</p>
+        </footer>
+    </div>
+</body>
+</html>

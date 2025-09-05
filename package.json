@@ -1,0 +1,34 @@
+{
+  "name": "christian-developer-package",
+  "version": "1.0.0",
+  "description": "Christian's Complete NOVAXE Developer Package",
+  "main": "index.js",
+  "scripts": {
+    "dev:all": "concurrently \"npm run dev:cubes\" \"npm run dev:msm\"",
+    "dev:cubes": "cd apps/chordcubes && npm run dev",
+    "dev:msm": "cd apps/million-song-mind && npm run dev",
+    "build:all": "npm run build:cubes && npm run build:msm",
+    "build:cubes": "cd apps/chordcubes && npm run build",
+    "build:msm": "cd apps/million-song-mind && npm run build",
+    "test:health": "node scripts/health-check.js",
+    "fix:msm": "node scripts/fix-msm-paths.js",
+    "health-check": "./tools/health-check.sh",
+    "test": "./tools/test-runner.sh",
+    "deploy": "./tools/deploy.sh",
+    "start:chordcubes": "cd apps/chordcubes && python -m http.server 3001",
+    "start:msm": "cd apps/million-song-mind && python -m http.server 3000",
+    "setup": "./tools/setup.sh"
+  },
+  "keywords": [
+    "novaxe",
+    "chordcubes", 
+    "million-song-mind",
+    "harmonic-oracle",
+    "music-theory"
+  ],
+  "author": "NOVAXE Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

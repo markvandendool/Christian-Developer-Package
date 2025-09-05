@@ -22,7 +22,7 @@ export const OnboardingSystem: React.FC<OnboardingSystemProps> = ({
 
       <div
         className="absolute top-4 left-1/2 transform -translate-x-1/2 
-                   bg-card border border-primary/30 rounded-lg shadow-xl
+                   bg-card border-primary/30 rounded-lg shadow-xl
                    p-3 max-w-xs pointer-events-auto cursor-pointer"
         onClick={() => {
           onClose();

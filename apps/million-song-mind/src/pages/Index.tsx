@@ -477,7 +477,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Professional Header - Reduced Height */}
-      <header className="bg-gradient-surface border-b border-border shadow-professional">
+      <header className="bg-gradient-surface border-b shadow-professional">
         <div className="max-w-7xl mx-auto px-6 py-2">
           <div className="flex items-center justify-between">
             <div className="space-y-1">
@@ -609,7 +609,7 @@ const Index = () => {
           </div>
 
           {/* Braid Options Info */}
-          <div className="mb-4 p-4 bg-gradient-to-r from-green-900/20 to-blue-900/20 rounded-lg border border-green-500/30">
+          <div className="mb-4 p-4 bg-gradient-to-r from-green-900/20 to-blue-900/20 rounded-lg border-green-500/30">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
               <div className="text-center">
                 <div className="font-bold text-green-400 mb-1">Braid Types</div>
@@ -653,7 +653,7 @@ const Index = () => {
           {musicVizSongs.length === 0 ? (
             <div className="max-w-4xl mx-auto space-y-8">
               {/* Welcome Section */}
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg p-8 border border-purple-200 dark:border-purple-700">
+              <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg p-8 border-purple-200 dark:border-purple-700">
                 <div className="text-center space-y-4">
                   <div className="flex items-center justify-center gap-2 text-2xl mb-6">
                     <Database className="h-8 w-8 text-purple-600 dark:text-purple-400" />
@@ -692,7 +692,7 @@ const Index = () => {
               <MusicVizFileUploader onFileUpload={handleMusicVizFileUpload} isLoading={isMusicVizLoading} />
 
               {/* Instructions */}
-              <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg p-6 border border-purple-200 dark:border-purple-700">
+              <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg p-6 border-purple-200 dark:border-purple-700">
                 <h3 className="text-xl font-bold mb-4 text-purple-800 dark:text-purple-200">Expected Data Format</h3>
                 <div className="space-y-2 text-sm">
                   <p className="text-purple-700 dark:text-purple-300"><strong>CPML CSV Format:</strong> Tab-separated values with these columns:</p>

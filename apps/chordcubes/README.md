@@ -1,31 +1,54 @@
-# OBS Cubes - Production Deployment
+# ChordCubes 6.0 V1.50 - Production Ready
+## Professional 3D Chord Visualization System
 
-## Overview
-Professional 3D interactive chord visualization system for millionsonmind.com/cubes
+[![Version](https://img.shields.io/badge/version-6.0.1.50-blue.svg)](https://github.com/markvandendool/Christian-Developer-Package)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://millionsongmind.com/cubes)
 
-## Deployment Details
-- **Target URL**: https://millionsonmind.com/cubes/
-- **Version**: 2.0 Production
-- **Build Date**: August 25, 2025
-- **Technology**: Pure Three.js with Web Audio API
-- **Code Size**: 3,436 lines of JavaScript
+**ChordCubes** is a professional-grade 3D interactive chord visualization system that provides real-time harmonic analysis and educational tools for musicians, composers, and music theorists.
 
-## Features
-- Interactive 3D chord cubes with physics-based drag system
-- Real-time audio synthesis with SoundFont integration
-- Professional lighting and stage mode
-- Chord progression tracking and analysis
-- Roman numeral and letter chord notation
-- Voice leading algorithms
-- Shelf mapping with REST/MOTION/TENSION zones
-- Multi-instrument audio layers (chord/bass/melody)
-- Save/load functionality for custom arrangements
+## 🚀 Live Demo
 
-## Technical Requirements
-- Modern browser with WebGL support
+Visit the live application: **[millionsongmind.com/cubes](https://millionsongmind.com/cubes)**
+
+## 📋 Overview
+Professional 3D interactive chord visualization system for production deployment
+
+## 🔧 Deployment Details
+- **Live URL**: https://millionsongmind.com/cubes/
+- **Version**: ChordCubes 6.0 V1.50 (Restored from V1.49 backup)
+- **Build Date**: September 5, 2025
+- **Technology**: Pure WebGL + JavaScript with advanced 3D engine
+- **Core Engine**: 10,685 lines of optimized JavaScript
+- **Total Assets**: 36+ files including fonts, configs, and modules
+
+## ✨ Features
+### 🎵 Core Functionality
+- **3D WebGL Rendering**: Professional-grade 3D chord visualization
+- **Real-time Analysis**: Live harmonic analysis and feedback  
+- **Interactive Interface**: Physics-based drag system with touch/mouse support
+- **Professional Audio**: Integrated drum machine and multi-instrument tools
+
+### 🎹 Musical Intelligence
+- **Chord Progression Engine**: Advanced chord analysis algorithms
+- **3D Musical Staves**: Interactive staff notation in 3D space  
+- **Roman Numeral Analysis**: Comprehensive harmonic analysis
+- **Voice Leading**: Advanced voice leading algorithms
+- **Shelf Mapping**: REST/MOTION/TENSION zone analysis
+
+### 🎨 Professional Experience
+- **Custom Typography**: Novaxe Diamond Font with ligature support
+- **Advanced Lighting**: Professional stage lighting system
+- **Save/Load**: Custom arrangement persistence
+- **Multi-instrument**: Chord/bass/melody audio layers
+- **SoundFont Integration**: High-quality audio synthesis
+
+## 🛠️ Technical Requirements
+- Modern browser with WebGL support (Chrome 90+, Firefox 88+, Safari 14+)
 - Web Audio API support
-- ES6 modules support
-- Internet connection for CDN resources
+- ES6 modules support  
+- Internet connection for CDN resources (Three.js, fonts)
+- Minimum 4GB RAM recommended for complex scenes
 
 ## File Structure
 ```

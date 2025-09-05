@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "public": true,
+    "buildCommand": "npm run build:all",
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/$1",
+            "headers": {
+                "X-Frame-Options": "SAMEORIGIN",
+                "X-Content-Type-Options": "nosniff",
+                "Referrer-Policy": "strict-origin-when-cross-origin"
+            }
+        }
+    ],
+    "rewrites": [
+        { "source": "/MSM/(.*)", "destination": "/million-song-mind/$1" },
+        { "source": "/cubes/(.*)", "destination": "/chordcubes/$1" },
+        { "source": "/novaxe/(.*)", "destination": "/novaxe/$1" }
+    ],
+    "github": {
+        "silent": true
+    }
+}

@@ -65,6 +65,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: 'localhost',
     port: 8090,
+    open: "/MSM/",
     strictPort: true,
   },
   plugins: [
