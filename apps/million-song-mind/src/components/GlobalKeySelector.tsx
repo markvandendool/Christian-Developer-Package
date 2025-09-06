@@ -54,7 +54,7 @@ export const GlobalKeySelector: React.FC<{ compact?: boolean }> = ({ compact = f
 
   return (
     <section className="w-full">
-      <div className="flex flex-wrap items-center justify-between gap-4 bg-card/80 border rounded-md px-4 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-4 bg-card/80 border border-border rounded-md px-4 py-3">
         <div className="flex items-center gap-3">
           <div className="text-sm  text-muted-foreground">Global Key</div>
           <div className="px-2 py-1 rounded bg-muted text-foreground  text-xs">Focused: {focusedKey}</div>

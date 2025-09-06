@@ -1,140 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 Phoenix Hub V1.0 - Million Song Mind Ecosystem</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: 'Arial', sans-serif;
-            min-height: 100vh;
-            color: white;
-        }
-        
-        .header {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(0,0,0,0.2);
-            backdrop-filter: blur(10px);
-        }
-        
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 20px rgba(255,255,255,0.5);
-        }
-        
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .app-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        
-        .app-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .app-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        
-        .app-url {
-            font-family: monospace;
-            background: rgba(0,0,0,0.3);
-            padding: 0.5rem;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            color: #00ff00;
-            margin-top: 1rem;
-        }
-        
-        .verification {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(0,0,0,0.7);
-            padding: 1rem;
-            border-radius: 10px;
-            font-size: 0.8rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Million Song Mind</title>
+  <meta name="description" content="Million Song Mind • Harmonic Analysis & Music Visualization • Built for Scale" />
+  <meta name="author" content="Professional Audio Engineering" />
+
+  <meta property="og:title" content="Million Song Mind" />
+  <meta property="og:description"
+    content="Million Song Mind • Harmonic Analysis & Music Visualization • Built for Scale" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@lovable_dev" />
+  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+  <!-- Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="/fonts/REAL_NOVAXE_FONT.otf" as="font" type="font/otf" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Music&family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;600;800&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-    <div class="verification">
-        ✅ Production deployment ready<br>
-        Version 1.0 - LIVE ON MILLIONSONGMIND.COM
-    </div>
-    
-    <div class="header">
-        <h1>🔥 Phoenix Hub</h1>
-        <p>Million Song Mind Ecosystem - Professional Suite</p>
-    </div>
-    
-    <div class="apps-grid">
-        <div class="app-card" onclick="window.open('/cubes', '_blank')">
-            <div class="app-icon">🎵</div>
-            <div class="app-title">ChordCubes V1.50</div>
-            <div>3D harmonic visualization with orchestral audio engine</div>
-            <div class="app-url">millionsongmind.com/cubes</div>
-        </div>
-        
-        <div class="app-card" onclick="window.open('/novaxe', '_blank')">
-            <div class="app-icon">🧠</div>
-            <div class="app-title">NOVAXE Angular 20</div>
-            <div>Musical intelligence system with 6 brain models</div>
-            <div class="app-url">millionsongmind.com/novaxe</div>
-        </div>
-        
-        <div class="app-card" onclick="window.open('/msm', '_blank')">
-            <div class="app-icon">🎼</div>
-            <div class="app-title">Million Song Mind MSM1.0</div>
-            <div>React app with harmonic profiles & braid analysis</div>
-            <div class="app-url">millionsongmind.com/msm</div>
-        </div>
-    </div>
-    
-    <script>
-        // Verify all production links work on load
-        window.addEventListener('DOMContentLoaded', async function() {
-            const paths = ['/cubes', '/novaxe', '/msm'];
-            for (let path of paths) {
-                try {
-                    const response = await fetch(path, { mode: 'no-cors' });
-                    console.log(`✅ Path ${path} verified working`);
-                } catch (e) {
-                    console.log(`⚠️ Path ${path} will be available after deployment`);
-                }
-            }
-        });
-    </script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
+
 </html>

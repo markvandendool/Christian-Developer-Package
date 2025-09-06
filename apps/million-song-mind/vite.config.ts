@@ -54,18 +54,10 @@ function loggingMiddleware() {
 
 // Unified Vite config
 export default defineConfig(({ mode }) => ({
-  base: '/MSM/',
-  build: {
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-      }
-    }
-  },
+  base: "/MSM/",  // Fix for production deployment
   server: {
     host: 'localhost',
     port: 8090,
-    open: "/MSM/",
     strictPort: true,
   },
   plugins: [

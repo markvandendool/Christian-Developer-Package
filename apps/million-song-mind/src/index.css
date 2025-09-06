@@ -25,6 +25,9 @@
 @layer base {
 
   /* Premium iOS-Safe Typography System */
+  * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "SF Pro Display", system-ui, sans-serif;
+  }
 
   :root {
     /* Premium Dark Theme - Deeper, cleaner */
@@ -169,6 +172,9 @@
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
 
   body {
     @apply bg-background text-foreground;

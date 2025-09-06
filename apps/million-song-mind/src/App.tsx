@@ -37,7 +37,7 @@ const App = () => (
       <ErrorBoundary>
         <BraidGeometryProvider>
           <GlobalKeyProvider>
-            <BrowserRouter basename="/MSM">
+            <BrowserRouter>
               <Routes>
                 <Route path="/test" element={<TestPage />} />
                 <Route path="/test" element={<TestPage />} />

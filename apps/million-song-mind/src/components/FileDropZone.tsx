@@ -45,7 +45,7 @@ export function FileDropZone({ onFiles, isLoading, isDragOver, setIsDragOver }: 
         transition-all duration-300 bg-gradient-surface
         ${isDragOver 
           ? 'border-primary bg-primary/10 shadow-chart animate-pulse-glow' 
-          : 'border hover:border-primary/50 hover:bg-card'
+          : 'border-border hover:border-primary/50 hover:bg-card'
         }
       `}
       onDragOver={handleDragOver}

@@ -48,7 +48,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = ({ logs, isOpen, onClose, o
 
   return (
     <div className="fixed top-4 right-4 w-96 max-h-[80vh] z-50">
-      <Card className="bg-background/95 backdrop-blur-sm border shadow-lg">
+      <Card className="bg-background/95 backdrop-blur-sm border-border shadow-lg">
         <CardHeader className="pb-2">
           <div className="flex items-center justify-between">
             <CardTitle className="text-sm  text-foreground">
@@ -114,7 +114,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = ({ logs, isOpen, onClose, o
                 </div>
               ) : viewMode === 'formatted' ? (
                 logs.map((log, index) => (
-                  <div key={index} className="p-2 rounded border/50 text-xs space-y-1">
+                  <div key={index} className="p-2 rounded border border-border/50 text-xs space-y-1">
                     <div className="flex items-center justify-between">
                       <Badge className={getTypeColor(log.type)}>
                         {log.type.toUpperCase()}

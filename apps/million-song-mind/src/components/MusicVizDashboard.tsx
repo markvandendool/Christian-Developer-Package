@@ -128,9 +128,9 @@ export function MusicVizDashboard({ songs }: MusicVizDashboardProps) {
   };
 
   return (
-    <div className="space-y-6 bg-gradient-surface border rounded-lg shadow-professional px-20 p-6">
+    <div className="space-y-6 bg-gradient-surface border border-border rounded-lg shadow-professional px-20 p-6">
       {/* Statistics Panel */}
-      <Card className="bg-gradient-surface border rounded-lg shadow-professional">
+      <Card className="bg-gradient-surface border border-border rounded-lg shadow-professional">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-foreground">
             <BarChart3 className="h-5 w-5" />
@@ -148,7 +148,7 @@ export function MusicVizDashboard({ songs }: MusicVizDashboardProps) {
                   placeholder="Search artists..."
                   value={filters.artistSearch}
                   onChange={(e) => setFilters(prev => ({ ...prev, artistSearch: e.target.value }))}
-                  className="pl-10 bg-background/50 border focus:ring-2 focus:ring-primary/30  text-sm"
+                  className="pl-10 bg-background/50 border border-border focus:ring-2 focus:ring-primary/30  text-sm"
                 />
               </div>
             </div>
@@ -156,7 +156,7 @@ export function MusicVizDashboard({ songs }: MusicVizDashboardProps) {
             <div>
               <Label htmlFor="musicviz-genre-select" className="text-muted-foreground  text-xs uppercase tracking-wider">Genre</Label>
               <Select value={filters.genre} onValueChange={(value) => setFilters(prev => ({ ...prev, genre: value }))}>
-                <SelectTrigger className="bg-background/50 border focus:ring-2 focus:ring-primary/30  text-sm">
+                <SelectTrigger className="bg-background/50 border border-border focus:ring-2 focus:ring-primary/30  text-sm">
                   <SelectValue placeholder="All genres" />
                 </SelectTrigger>
                 <SelectContent>
@@ -171,7 +171,7 @@ export function MusicVizDashboard({ songs }: MusicVizDashboardProps) {
             <div>
               <Label htmlFor="musicviz-decade-select" className="text-muted-foreground  text-xs uppercase tracking-wider">Decade</Label>
               <Select value={filters.decade} onValueChange={(value) => setFilters(prev => ({ ...prev, decade: value }))}>
-                <SelectTrigger className="bg-background/50 border focus:ring-2 focus:ring-primary/30  text-sm">
+                <SelectTrigger className="bg-background/50 border border-border focus:ring-2 focus:ring-primary/30  text-sm">
                   <SelectValue placeholder="All decades" />
                 </SelectTrigger>
                 <SelectContent>
@@ -190,7 +190,7 @@ export function MusicVizDashboard({ songs }: MusicVizDashboardProps) {
                 setSortBy(newSortBy);
                 setSortOrder(newSortOrder);
               }}>
-                <SelectTrigger className="bg-background/50 border focus:ring-2 focus:ring-primary/30  text-sm">
+                <SelectTrigger className="bg-background/50 border border-border focus:ring-2 focus:ring-primary/30  text-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -238,7 +238,7 @@ export function MusicVizDashboard({ songs }: MusicVizDashboardProps) {
                 Export CSV
               </Button>
               
-              <div className="flex border-purple-300 dark:border-purple-600 rounded-md">
+              <div className="flex border border-purple-300 dark:border-purple-600 rounded-md">
                 <Button
                   variant={viewMode === 'cards' ? 'default' : 'ghost'}
                   size="sm"

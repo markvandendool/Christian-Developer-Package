@@ -12,7 +12,7 @@ export const BraidMappingValidator: React.FC = () => {
   const slotMapping = createHarmonicSlotToBraidMapping();
 
   return (
-    <div className="p-4 bg-card border rounded-lg space-y-4">
+    <div className="p-4 bg-card border border-border rounded-lg space-y-4">
       <h3 className="font-bold text-lg">Braid-to-Harmonic Mapping Validation</h3>
       
       <div className="grid md:grid-cols-2 gap-4">

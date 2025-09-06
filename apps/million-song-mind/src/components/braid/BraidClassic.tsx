@@ -37,7 +37,7 @@ const Select: React.FC<{
   <label className="flex items-center gap-2 text-sm">
     <span className="text-muted-foreground">Key</span>
     <select
-      className="border rounded px-2 py-1 bg-background text-foreground"
+      className="border border-border rounded px-2 py-1 bg-background text-foreground"
       value={value}
       onChange={(e) => onChange(e.target.value)}
     >

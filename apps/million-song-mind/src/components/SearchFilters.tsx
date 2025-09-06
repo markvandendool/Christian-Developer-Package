@@ -57,9 +57,9 @@ export function SearchFilters({ onSearch, totalSongs, filteredCount, isLoading }
   const decades = ['1950s', '1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020s'];
 
   return (
-    <div className="bg-gradient-surface border rounded-lg shadow-professional px-20">
+    <div className="bg-gradient-surface border border-border rounded-lg shadow-professional px-20">
       {/* Header with Live Counter */}
-      <div className="p-6 border-b">
+      <div className="p-6 border-b border-border">
         <div className="flex items-center justify-between">
           <div className="space-y-1">
             <h2 className="text-2xl  font-bold text-foreground tracking-wider">
@@ -98,7 +98,7 @@ export function SearchFilters({ onSearch, totalSongs, filteredCount, isLoading }
               placeholder="Search songs..."
               value={filters.songName}
               onChange={(e) => handleFilterChange('songName', e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-input border rounded-lg text-foreground  text-sm focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+              className="w-full pl-10 pr-4 py-3 bg-input border border-border rounded-lg text-foreground  text-sm focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
               disabled={isLoading}
             />
           </div>
@@ -113,7 +113,7 @@ export function SearchFilters({ onSearch, totalSongs, filteredCount, isLoading }
               placeholder="Search artists..."
               value={filters.artistName}
               onChange={(e) => handleFilterChange('artistName', e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-input border rounded-lg text-foreground  text-sm focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+              className="w-full pl-10 pr-4 py-3 bg-input border border-border rounded-lg text-foreground  text-sm focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
               disabled={isLoading}
             />
           </div>
@@ -143,7 +143,7 @@ export function SearchFilters({ onSearch, totalSongs, filteredCount, isLoading }
 
       {/* Advanced Filters */}
       {isExpanded && (
-        <div className="px-6 pb-6 space-y-6 border-t animate-fade-in">
+        <div className="px-6 pb-6 space-y-6 border-t border-border animate-fade-in">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Genre Filter */}
@@ -155,7 +155,7 @@ export function SearchFilters({ onSearch, totalSongs, filteredCount, isLoading }
               <select
                 value={filters.genre}
                 onChange={(e) => handleFilterChange('genre', e.target.value)}
-                className="w-full px-3 py-2 bg-input border rounded-lg text-foreground  text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-3 py-2 bg-input border border-border rounded-lg text-foreground  text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
                 disabled={isLoading}
               >
                 <option value="">All Genres</option>
@@ -176,7 +176,7 @@ export function SearchFilters({ onSearch, totalSongs, filteredCount, isLoading }
               <select
                 value={filters.decade}
                 onChange={(e) => handleFilterChange('decade', e.target.value)}
-                className="w-full px-3 py-2 bg-input border rounded-lg text-foreground  text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-3 py-2 bg-input border border-border rounded-lg text-foreground  text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
                 disabled={isLoading}
               >
                 <option value="">All Decades</option>
@@ -201,7 +201,7 @@ export function SearchFilters({ onSearch, totalSongs, filteredCount, isLoading }
                   max="2024"
                   value={filters.yearRange[0]}
                   onChange={(e) => handleFilterChange('yearRange', [parseInt(e.target.value), filters.yearRange[1]])}
-                  className="w-20 px-2 py-2 bg-input border rounded text-foreground  text-xs focus:ring-1 focus:ring-primary"
+                  className="w-20 px-2 py-2 bg-input border border-border rounded text-foreground  text-xs focus:ring-1 focus:ring-primary"
                   disabled={isLoading}
                 />
                 <span className="text-muted-foreground">–</span>
@@ -211,7 +211,7 @@ export function SearchFilters({ onSearch, totalSongs, filteredCount, isLoading }
                   max="2024"
                   value={filters.yearRange[1]}
                   onChange={(e) => handleFilterChange('yearRange', [filters.yearRange[0], parseInt(e.target.value)])}
-                  className="w-20 px-2 py-2 bg-input border rounded text-foreground  text-xs focus:ring-1 focus:ring-primary"
+                  className="w-20 px-2 py-2 bg-input border border-border rounded text-foreground  text-xs focus:ring-1 focus:ring-primary"
                   disabled={isLoading}
                 />
               </div>
@@ -219,7 +219,7 @@ export function SearchFilters({ onSearch, totalSongs, filteredCount, isLoading }
           </div>
 
           {/* Chord Selection Instructions */}
-          <div className="bg-card border rounded-lg p-4">
+          <div className="bg-card border border-border rounded-lg p-4">
             <h4 className="text-sm  font-bold text-foreground mb-2">
               🎵 CHORD FILTERING
             </h4>

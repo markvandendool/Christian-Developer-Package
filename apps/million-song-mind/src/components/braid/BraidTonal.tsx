@@ -63,42 +63,38 @@ const BraidTonal: React.FC<BraidTonalProps> = ({
   const [zoom, setZoom] = useState<number>(zoomProp ?? 1);
 
   useEffect(() => {
-    fetch("./assets/braid_tonalities.json")
+    fetch("/assets/braid_tonalities.json")
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
       })
-      .then((data) => {
-        console.log('📦 JSON LOADED:', data);
-        setTonalities(data);
-      })
-      .catch((error) => {
-        console.error('❌ JSON FAILED TO LOAD:', error);
+      .then((data) => setTonalities(data))
+      .catch(() => {
         // Fallback minimal dataset: center columns only, using regular text
         setTonalities({
           roman: {
             center_major: Array(12).fill('I'),
             center_minor: Array(12).fill('i'),
-            left_up: ['IV', 'I', 'V', 'ii', 'vi', 'iii', 'vii°', '#iv°', '#I', '#V', '#ii', '#vi'],
-            left_down: ['ii', 'vi', 'iii', 'vii°', '#iv°', '#I', '#V', '#ii', '#vi', 'iv', 'i', 'v'],
-            right_up: ['V', 'ii', 'vi', 'iii', 'vii°', '#iv°', '#I', '#V', '#ii', '#vi', 'IV', 'I'],
-            right_down: ['iii', 'vii°', '#iv°', '#I', '#V', '#ii', '#vi', 'iv', 'i', 'v', 'ii', 'vi'],
-            outer_left_up: ['♭VII', 'IV', 'I', 'V', 'ii', 'vi', 'iii', 'vii°', '#iv°', '#I', '#V', '#ii'],
-            outer_left_down: ['v', 'ii', 'vi', 'iii', 'vii°', '#iv°', '#I', '#V', '#ii', '#vi', 'iv', 'i'],
-            outer_right_up: ['ii', 'vi', 'iii', 'vii°', '#iv°', '#I', '#V', '#ii', '#vi', 'IV', 'I', 'V'],
-            outer_right_down: ['vii°', '#iv°', '#I', '#V', '#ii', '#vi', 'iv', 'i', 'v', 'ii', 'vi', 'iii'],
+            left_up: Array(12).fill(''),
+            left_down: Array(12).fill(''),
+            right_up: Array(12).fill(''),
+            right_down: Array(12).fill(''),
+            outer_left_up: Array(12).fill(''),
+            outer_left_down: Array(12).fill(''),
+            outer_right_up: Array(12).fill(''),
+            outer_right_down: Array(12).fill(''),
           },
           C: {
             center_major: ["C", "G", "D", "A", "E", "B", "F#", "C#", "G#", "D#", "A#", "F"],
             center_minor: ["Am", "Em", "Bm", "F#m", "C#m", "G#m", "D#m", "A#m", "Fm", "Cm", "Gm", "Dm"],
-            left_up: ["F", "C", "G", "D", "A", "E", "B", "F#", "C#", "G#", "D#", "A#"],
-            left_down: ["Dm", "Am", "Em", "Bm", "F#m", "C#m", "G#m", "D#m", "A#m", "Fm", "Cm", "Gm"],
-            right_up: ["G", "D", "A", "E", "B", "F#", "C#", "G#", "D#", "A#", "F", "C"],
-            right_down: ["Em", "Bm", "F#m", "C#m", "G#m", "D#m", "A#m", "Fm", "Cm", "Gm", "Dm", "Am"],
-            outer_left_up: ["Bb", "F", "C", "G", "D", "A", "E", "B", "F#", "C#", "G#", "D#"],
-            outer_left_down: ["Gm", "Dm", "Am", "Em", "Bm", "F#m", "C#m", "G#m", "D#m", "A#m", "Fm", "Cm"],
-            outer_right_up: ["D", "A", "E", "B", "F#", "C#", "G#", "D#", "A#", "F", "C", "G"],
-            outer_right_down: ["Bm", "F#m", "C#m", "G#m", "D#m", "A#m", "Fm", "Cm", "Gm", "Dm", "Am", "Em"],
+            left_up: Array(12).fill(''),
+            left_down: Array(12).fill(''),
+            right_up: Array(12).fill(''),
+            right_down: Array(12).fill(''),
+            outer_left_up: Array(12).fill(''),
+            outer_left_down: Array(12).fill(''),
+            outer_right_up: Array(12).fill(''),
+            outer_right_down: Array(12).fill(''),
           },
         } as unknown as BraidTonalities);
       });
@@ -186,45 +182,17 @@ const BraidTonal: React.FC<BraidTonalProps> = ({
     }
 
     const currentTonalitySet = tonalities[tonality] as TonalSet;
-    
-    // DEBUG: Log the current tonality and what data we have
-    console.log('🔍 BraidTonal DEBUG - Current tonality:', tonality);
-    console.log('🔍 BraidTonal DEBUG - Available keys in tonalities:', Object.keys(tonalities || {}));
-    console.log('🔍 BraidTonal DEBUG - currentTonalitySet:', currentTonalitySet);
-    if (currentTonalitySet) {
-      console.log('🔍 BraidTonal DEBUG - Side bubble arrays:');
-      console.log('  left_up length:', currentTonalitySet.left_up?.length, 'values:', currentTonalitySet.left_up?.slice(0, 5));
-      console.log('  left_down length:', currentTonalitySet.left_down?.length, 'values:', currentTonalitySet.left_down?.slice(0, 5));
-      console.log('  right_up length:', currentTonalitySet.right_up?.length, 'values:', currentTonalitySet.right_up?.slice(0, 5));
-      console.log('  right_down length:', currentTonalitySet.right_down?.length, 'values:', currentTonalitySet.right_down?.slice(0, 5));
-      console.log('🔍 BraidTonal DEBUG - Outer bubble arrays:');
-      console.log('  outer_left_up length:', currentTonalitySet.outer_left_up?.length, 'values:', currentTonalitySet.outer_left_up?.slice(0, 5));
-      console.log('  outer_left_down length:', currentTonalitySet.outer_left_down?.length, 'values:', currentTonalitySet.outer_left_down?.slice(0, 5));
-      console.log('  outer_right_up length:', currentTonalitySet.outer_right_up?.length, 'values:', currentTonalitySet.outer_right_up?.slice(0, 5));
-      console.log('  outer_right_down length:', currentTonalitySet.outer_right_down?.length, 'values:', currentTonalitySet.outer_right_down?.slice(0, 5));
-      
-      console.log('🔍 BraidTonal DEBUG - currentTonalitySet properties check:');
-      console.log('  Has left_up?', !!currentTonalitySet.left_up);
-      console.log('  Has left_down?', !!currentTonalitySet.left_down);
-      console.log('  Has right_up?', !!currentTonalitySet.right_up);  
-      console.log('  Has right_down?', !!currentTonalitySet.right_down);
-      console.log('  Has outer_left_up?', !!currentTonalitySet.outer_left_up);
-      console.log('  Has outer_left_down?', !!currentTonalitySet.outer_left_down);
-      console.log('  Has outer_right_up?', !!currentTonalitySet.outer_right_up);
-      console.log('  Has outer_right_down?', !!currentTonalitySet.outer_right_down);
-    }
 
     const getInUse = (noteArr: string[], romanArr: string[], rotation = 0) => {
       // ALWAYS use note names for consistency with selectedChords
       // This ensures isSelected() checks against the same identifiers used by handleChordSelect
-      console.log('🔍 getInUse called with noteArr:', noteArr?.slice(0, 5));
       return noteArr;
     };
 
     // The original Angular code has a rotation of -3 for roman numerals in minor context
     const romanMinorRotation = -3;
 
-    const result = {
+    return {
       center_left: currentTonalitySet.center_major,
       center_right: currentTonalitySet.center_minor,
       left_up: currentTonalitySet.left_up,
@@ -247,19 +215,6 @@ const BraidTonal: React.FC<BraidTonalProps> = ({
       fifth_right_up_in_use: getInUse(currentTonalitySet.outer_right_up, tonalities.roman.outer_right_up, displayRoman ? romanMinorRotation : 0),
       fifth_right_down_in_use: getInUse(currentTonalitySet.outer_right_down, tonalities.roman.outer_right_down, displayRoman ? romanMinorRotation : 0),
     };
-
-    // DEBUG: Log the final processed arrays
-    console.log('🎯 BraidTonal FINAL ARRAYS DEBUG:');
-    console.log('  left_up_in_use:', result.left_up_in_use?.slice(0, 5));
-    console.log('  left_down_in_use:', result.left_down_in_use?.slice(0, 5));  
-    console.log('  right_up_in_use:', result.right_up_in_use?.slice(0, 5));
-    console.log('  right_down_in_use:', result.right_down_in_use?.slice(0, 5));
-    console.log('  fifth_left_up_in_use:', result.fifth_left_up_in_use?.slice(0, 5));
-    console.log('  fifth_left_down_in_use:', result.fifth_left_down_in_use?.slice(0, 5));
-    console.log('  fifth_right_up_in_use:', result.fifth_right_up_in_use?.slice(0, 5));
-    console.log('  fifth_right_down_in_use:', result.fifth_right_down_in_use?.slice(0, 5));
-
-    return result;
 
   }, [tonalities, tonality, displayRoman]);
 
@@ -549,21 +504,7 @@ const BraidTonal: React.FC<BraidTonalProps> = ({
           </g>
 
           {/* Side Bubbles */}
-          {i > 0 && i < center_left.length - 1 && (() => {
-            const sideCondition = (left_up_in_use[i - 1] || left_down_in_use[i - 1] || right_up_in_use[i - 1] || right_down_in_use[i - 1]);
-            if (i === 1) { // Only log for first eligible row
-              console.log(`🔍 Side bubbles condition for i=${i}:`, {
-                indexCheck: `${i} > 0 && ${i} < ${center_left.length - 1}`,
-                leftUp: left_up_in_use[i - 1],
-                leftDown: left_down_in_use[i - 1], 
-                rightUp: right_up_in_use[i - 1],
-                rightDown: right_down_in_use[i - 1],
-                condition: sideCondition
-              });
-            }
-            // HARDCODED TEST: Force render for i=1 to test bubble visibility
-            return sideCondition || i === 1;
-          })() && (
+          {i > 0 && i < center_left.length - 1 && (left_up_in_use[i - 1] || left_down_in_use[i - 1] || right_up_in_use[i - 1] || right_down_in_use[i - 1]) && (
             <>
               <g className="smallBubble bub" transform="translate(-85 0)">
                 <g className={`${usageClass(getUsage(left_up_in_use[i - 1]))}`}>
@@ -621,21 +562,7 @@ const BraidTonal: React.FC<BraidTonalProps> = ({
           )}
 
           {/* Outer Bubbles */}
-          {i < center_left.length - 2 && (() => {
-            const outerCondition = (fifth_left_up_in_use[i] || fifth_left_down_in_use[i] || fifth_right_up_in_use[i] || fifth_right_down_in_use[i]);
-            if (i === 0) { // Only log for first eligible row
-              console.log(`🔍 Outer bubbles condition for i=${i}:`, {
-                indexCheck: `${i} < ${center_left.length - 2}`,
-                fifthLeftUp: fifth_left_up_in_use[i],
-                fifthLeftDown: fifth_left_down_in_use[i],
-                fifthRightUp: fifth_right_up_in_use[i], 
-                fifthRightDown: fifth_right_down_in_use[i],
-                condition: outerCondition
-              });
-            }
-            // HARDCODED TEST: Force render for i=0 to test bubble visibility
-            return outerCondition || i === 0;
-          })() && (
+          {i < center_left.length - 2 && (fifth_left_up_in_use[i] || fifth_left_down_in_use[i] || fifth_right_up_in_use[i] || fifth_right_down_in_use[i]) && (
             <>
               <g className="smallBubble outer bub" transform="translate(-130 45)">
                 <g className={`${usageClass(getUsage(fifth_left_up_in_use[i]))}`}>
