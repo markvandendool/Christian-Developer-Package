@@ -1,0 +1,12 @@
+{
+  "sprintNumber": 1,
+  "sprintName": "Project Infrastructure Setup",
+  "startDate": "2025-09-08",
+  "endDate": "2025-09-22",
+  "tasks": [
+    {"id": "CUBE-001", "title": "Create project backlog in Jira", "assignee": "TBD", "storyPoints": 5},
+    {"id": "CUBE-002", "title": "Implement automated testing framework", "assignee": "TBD", "storyPoints": 8},
+    {"id": "CUBE-003", "title": "Set up CI/CD pipeline", "assignee": "TBD", "storyPoints": 5}
+  ],
+  "sprintGoal": "Establish core infrastructure for agile development workflow"
+}

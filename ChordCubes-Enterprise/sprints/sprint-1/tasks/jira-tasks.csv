@@ -1,0 +1,4 @@
+Summary,Description,Issue Type,Priority,Story Points,Epic Link
+Create project backlog in Jira,Set up Jira project for ChordCubes V1.50 Gold with proper epics user stories and tasks. Integrate with GitHub for automated issue tracking.,Task,High,5,CUBE-000
+Implement automated testing framework,Create Jest/Cypress testing suite for ChordCubes with unit integration and E2E tests. Focus on core features: 3D rendering keyboard input and HUD components.,Task,High,8,CUBE-000
+Set up CI/CD pipeline,Configure GitHub Actions workflow for automated testing building and deployment to staging and production environments. Include security scanning and code quality checks.,Task,High,5,CUBE-000
