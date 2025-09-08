@@ -35,15 +35,6 @@ import { BraidChordSequence } from '@/components/BraidChord';
 import { CHORD_SLOTS, CHORD_GROUPS } from '@/constants/harmony';
 import { useSEO } from '@/hooks/useSEO';
 import { Switch } from '@/components/ui/switch';
-import { FontSelector } from '@/components/FontSelector';
-
-// Extend Window interface for custom properties
-declare global {
-  interface Window {
-    millionSongMindLogs?: Array<{ timestamp: string; message: string; data?: any }>;
-    __msmSelectedKey?: string;
-  }
-}
 import { Slider } from '@/components/ui/slider';
 import { noteToRoman, romanToNote, createChordMappingForKey } from '@/utils/chordMapping';
 import { mapRomanToHarmonicSlot } from '@/utils/braidHarmonicMapping';
@@ -871,7 +862,7 @@ const MillionSongMind = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Sticky Premium Header */}
-      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border" style={{ boxShadow: 'var(--shadow-professional)' }}>
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b" style={{ boxShadow: 'var(--shadow-professional)' }}>
         <div className="max-w-[120rem] mx-auto px-4 md:px-8 py-6 md:py-8">
           <div className="flex items-center justify-between">
             <div className="space-y-3">
@@ -928,11 +919,6 @@ const MillionSongMind = () => {
                   </Button>
                 </div>
 
-                {/* DYNAMIC FONT SELECTOR - Allows runtime font switching */}
-                <div className="hidden lg:block">
-                  <FontSelector showPreview={false} className="max-w-xs" />
-                </div>
-
                 <Button
                   variant="secondary"
                   onClick={resetToEmpty}
@@ -953,7 +939,7 @@ const MillionSongMind = () => {
         {/* Welcome message for first-time users */}
         {isFirstTimeUser && (
           <div className="learning-section">
-            <h3 className="text-responsive-lg font-semibold mb-2">🎵 Welcome to Million Song Mind!</h3>
+            <h3 className="text-responsive-lg font-semibold mb-2">🎵 Welcome to Million Song Mind <span className="font-black text-primary">V1.0</span>!</h3>
             <p className="text-responsive-sm text-muted-foreground mb-4">
               This is your professional music analysis tool. Click the <strong>TUTORIAL</strong> button
               in the header to get started with a guided tour.
@@ -974,7 +960,7 @@ const MillionSongMind = () => {
                   onClick={() => setIsFirstTimeUser(false)}
                   onTouchStart={() => setIsFirstTimeUser(false)}
                 >
-                  <div className="absolute top-4 left-4 right-4 bg-primary/90 text-primary-foreground px-4 py-3 rounded-lg border border-primary">
+                  <div className="absolute top-4 left-4 right-4 bg-primary/90 text-primary-foreground px-4 py-3 rounded-lg border-primary">
                     <div className="text-sm font-medium">
                       🎵 <strong>Harmonic Profile</strong> shows chord usage across your selected songs.
                       Click any chord to select it for analysis.
@@ -1054,7 +1040,7 @@ const MillionSongMind = () => {
                 fileCount={1}
                 totalSongs={filteredSongs.length || parseResult?.successfulRows || 0}
                 onChordSelect={handleChordSelect}
-                selectedChords={Array.from(selectedChords)}
+                selectedChords={selectedChords}
               />
 
               {/* Small reset button in bottom-right of chart card */}
@@ -1100,7 +1086,7 @@ const MillionSongMind = () => {
                   onClick={() => setIsFirstTimeUser(false)}
                   onTouchStart={() => setIsFirstTimeUser(false)}
                 >
-                  <div className="absolute top-4 left-4 right-4 bg-accent/90 text-accent-foreground px-4 py-3 rounded-lg border border-accent">
+                  <div className="absolute top-4 left-4 right-4 bg-accent/90 text-accent-foreground px-4 py-3 rounded-lg border-accent">
                     <div className="text-sm font-medium">
                       💫 The <strong>Braid</strong> shows harmonic relationships as a geometric pattern.
                       Each chord is positioned by its harmonic distance from others.
@@ -1112,7 +1098,7 @@ const MillionSongMind = () => {
 
               {/* Zoom controls - touch friendly */}
               {!is3D && (
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-4 bg-card border border-border rounded-lg p-4 mb-4">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-4 bg-card border rounded-lg p-4 mb-4">
                   <span className="text-sm font-medium text-foreground">Zoom Level</span>
                   <div className="flex-1 min-w-0">
                     <Slider
@@ -1165,7 +1151,7 @@ const MillionSongMind = () => {
 
         {/* Section 2: Combined Song Search */}
         <section className="space-y-6">
-          <Card className="bg-card/80 border-border backdrop-blur-sm" style={{ boxShadow: 'var(--shadow-professional)' }}>
+          <Card className="bg-card/80 border backdrop-blur-sm" style={{ boxShadow: 'var(--shadow-professional)' }}>
             <CardHeader className="pb-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -1222,7 +1208,7 @@ const MillionSongMind = () => {
                   placeholder="Search songs, artists, or albums..."
                   value={songSearch}
                   onChange={(e) => setSongSearch(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-background/50 border border-border rounded-lg text-foreground placeholder-muted-foreground  focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
+                  className="w-full pl-12 pr-4 py-3 bg-background/50 border rounded-lg text-foreground placeholder-muted-foreground  focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                 />
               </div>
 
@@ -1247,7 +1233,7 @@ const MillionSongMind = () => {
                   <select
                     value={selectedGenre}
                     onChange={(e) => setSelectedGenre(e.target.value)}
-                    className="w-full p-3 bg-background/50 border border-border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    className="w-full p-3 bg-background/50 border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                   >
                     <option value="">All Genres</option>
                     {getUniqueGenres().map(genre => (
@@ -1261,7 +1247,7 @@ const MillionSongMind = () => {
                   <select
                     value={selectedDecade}
                     onChange={(e) => setSelectedDecade(e.target.value)}
-                    className="w-full p-3 bg-background/50 border border-border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    className="w-full p-3 bg-background/50 border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                   >
                     <option value="">All Decades</option>
                     <option value="2020">2020s</option>
@@ -1279,7 +1265,7 @@ const MillionSongMind = () => {
                   <select
                     value={selectedKey}
                     onChange={(e) => setSelectedKey(e.target.value)}
-                    className="w-full p-3 bg-background/50 border border-border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    className="w-full p-3 bg-background/50 border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                   >
                     <option value="">All Keys</option>
                     {getUniqueKeys().map(key => (
@@ -1296,14 +1282,14 @@ const MillionSongMind = () => {
                       placeholder="From"
                       value={yearRangeStart}
                       onChange={(e) => setYearRangeStart(e.target.value)}
-                      className="w-full p-3 bg-background/50 border border-border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      className="w-full p-3 bg-background/50 border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                     />
                     <input
                       type="number"
                       placeholder="To"
                       value={yearRangeEnd}
                       onChange={(e) => setYearRangeEnd(e.target.value)}
-                      className="w-full p-3 bg-background/50 border border-border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      className="w-full p-3 bg-background/50 border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                     />
                   </div>
                 </div>
@@ -1313,7 +1299,7 @@ const MillionSongMind = () => {
                   <select
                     value={selectedStructure}
                     onChange={(e) => setSelectedStructure(e.target.value)}
-                    className="w-full p-3 bg-background/50 border border-border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    className="w-full p-3 bg-background/50 border rounded-lg text-foreground  text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                   >
                     <option value="">All Structures</option>
                     <option value="Has Sections">Has Sections</option>
@@ -1373,7 +1359,7 @@ const MillionSongMind = () => {
               {/* Song Table */}
               <div className="space-y-4">
                 <div className="overflow-x-auto">
-                  <div className="min-w-[900px] grid grid-cols-[32px,1.2fr,1fr,80px,2fr,2fr,64px] gap-4 py-3 text-xs md:text-sm  border-b border-border/30 uppercase tracking-[0.08em] md:tracking-[0.1em] text-muted-foreground font-bold">
+                  <div className="min-w-[900px] grid grid-cols-[32px,1.2fr,1fr,80px,2fr,2fr,64px] gap-4 py-3 text-xs md:text-sm  border-b border/30 uppercase tracking-[0.08em] md:tracking-[0.1em] text-muted-foreground font-bold">
                     <div className="w-8"></div>
                     <div className="cursor-pointer hover:text-foreground transition-colors flex items-center gap-1" onClick={() => handleSort('spotify_song_id')}>
                       SONG
@@ -1397,7 +1383,7 @@ const MillionSongMind = () => {
                       paginatedSongs.map((song, idx) => (
                         <div
                           key={song.spotify_song_id || song.id}
-                          className={`min-w-[900px] grid grid-cols-[32px,1.2fr,1fr,80px,2fr,2fr,64px] gap-4 py-3 text-xs md:text-sm  border-b border-border/30 hover:bg-accent/30 transition-colors cursor-pointer ${selectedSongs.has(song.spotify_song_id || song.id) ? 'bg-primary/10' : ''
+                          className={`min-w-[900px] grid grid-cols-[32px,1.2fr,1fr,80px,2fr,2fr,64px] gap-4 py-3 text-xs md:text-sm  border-b border/30 hover:bg-accent/30 transition-colors cursor-pointer ${selectedSongs.has(song.spotify_song_id || song.id) ? 'bg-primary/10' : ''
                             }`}
                           onClick={(e) => handleSongSelect(song.spotify_song_id || song.id, e)}
                         >
@@ -1493,7 +1479,7 @@ const MillionSongMind = () => {
 
                 {/* Selection Summary */}
                 {selectedSongs.size > 0 && (
-                  <div className="mt-4 p-4 bg-primary/5 border border-primary/20 rounded-lg">
+                  <div className="mt-4 p-4 bg-primary/5 border-primary/20 rounded-lg">
                     <div className="flex items-center justify-between">
                       <span className=" text-sm text-foreground">
                         {selectedSongs.size} song{selectedSongs.size !== 1 ? 's' : ''} selected
@@ -1557,7 +1543,7 @@ const MillionSongMind = () => {
                   onMultiFileUpload={handleMultiFileUpload}
                   isLoading={isLoading}
                 />
-                <div className="pt-6 border-t border-border/30">
+                <div className="pt-6 border-t border/30">
                   <Button
                     variant="ghost"
                     onClick={loadMockData}
@@ -1573,7 +1559,7 @@ const MillionSongMind = () => {
 
           {/* Dataset Status - Only show when data is loaded */}
           {parseResult && !isLoading && (
-            <Card className="bg-gradient-accent border-border" style={{ boxShadow: 'var(--shadow-card)' }}>
+            <Card className="bg-gradient-accent border" style={{ boxShadow: 'var(--shadow-card)' }}>
               <CardContent className="pt-6 pb-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-6">
@@ -1667,10 +1653,10 @@ const MillionSongMind = () => {
       />
 
       {/* Footer */}
-      <footer className="border-t border-border mt-16 py-6">
+      <footer className="border-t mt-16 py-6">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-muted-foreground text-sm">
-            Million Song Mind — built for harmonic exploration at scale
+            Million Song Mind <span className="font-black text-primary">V1.0</span> — built for harmonic exploration at scale
           </p>
         </div>
       </footer>

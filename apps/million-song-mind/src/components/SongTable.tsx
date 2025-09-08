@@ -92,7 +92,7 @@ const handlePlay = (song: Song) => {
 
   if (isLoading) {
     return (
-      <div className="bg-gradient-surface border border-border rounded-lg shadow-professional p-8 px-20">
+      <div className="bg-gradient-surface border rounded-lg shadow-professional p-8 px-20">
         <div className="text-center space-y-4">
           <div className="text-primary  text-xl animate-pulse">
             ⏳ ANALYZING MUSICAL DATABASE...
@@ -106,9 +106,9 @@ const handlePlay = (song: Song) => {
   }
 
   return (
-    <div className="bg-gradient-surface border border-border rounded-lg shadow-professional px-20">
+    <div className="bg-gradient-surface border rounded-lg shadow-professional px-20">
       {/* Header */}
-      <div className="p-6 border-b border-border">
+      <div className="p-6 border-b">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-xl  font-bold text-foreground tracking-wider">
@@ -148,7 +148,7 @@ const handlePlay = (song: Song) => {
       {/* Table */}
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-muted border-b border-border">
+          <thead className="bg-muted border-b">
             <tr>
               <th 
                 className="px-6 py-4 text-left text-xs  font-bold text-foreground uppercase tracking-wider cursor-pointer hover:bg-secondary transition-colors"
@@ -198,7 +198,7 @@ const handlePlay = (song: Song) => {
             {paginatedSongs.map((song, index) => (
               <tr 
                 key={song.id}
-                className={`border-b border-border hover:bg-secondary/50 transition-colors cursor-pointer ${
+                className={`border-b hover:bg-secondary/50 transition-colors cursor-pointer ${
                   selectedSongs.includes(song.id) ? 'bg-primary/10' : ''
                 }`}
                 onClick={() => onSongSelect?.(song)}
@@ -250,7 +250,7 @@ const handlePlay = (song: Song) => {
 
       {/* Pagination Footer */}
       {totalPages > 1 && (
-        <div className="px-6 py-4 border-t border-border flex items-center justify-between">
+        <div className="px-6 py-4 border-t flex items-center justify-between">
           <div className="text-sm  text-muted-foreground">
             Page {currentPage} of {totalPages} • {filteredAndSortedSongs.length} songs starting with "{selectedLetter}"
           </div>

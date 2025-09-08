@@ -1,96 +1,13 @@
 {
-  "name": "@millionsongmind/chordcubes",
-  "version": "6.0.150",
-  "description": "Professional 3D interactive chord visualization system with real-time harmonic analysis and educational tools for musicians, composers, and music theorists",
-  "main": "main.js",
-  "homepage": "https://millionsongmind.com/cubes",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/markvandendool/Christian-Developer-Package.git",
-    "directory": "apps/chordcubes"
-  },
-  "keywords": [
-    "music",
-    "chord-visualization",
-    "3d",
-    "webgl",
-    "music-theory",
-    "harmonic-analysis",
-    "interactive",
-    "education",
-    "professional",
-    "real-time"
-  ],
-  "author": {
-    "name": "Novaxe Team",
-    "email": "markvandendool@gmail.com",
-    "url": "https://millionsongmind.com"
-  },
-  "license": "MIT",
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie <= 11"
-  ],
+  "name": "chordcubes",
+  "version": "1.0.0",
+  "description": "ChordCubes - 3D harmonic visualization",
   "scripts": {
-    "start": "python3 -m http.server 8080",
-    "serve": "live-server --port=8080 --open=/",
-    "dev": "python3 -m http.server 8080",
-    "test": "echo 'Manual testing required - open index.html in browser'",
-    "build": "echo 'No build process required - static files ready for deployment'",
-    "deploy": "vercel --prod",
-    "lint": "echo 'ESLint configuration recommended for development'",
-    "validate": "echo 'Validate WebGL support and audio functionality'"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "dependencies": {},
   "devDependencies": {
-    "live-server": "^1.2.2"
-  },
-  "peerDependencies": {},
-  "files": [
-    "*.html",
-    "*.js",
-    "*.css",
-    "*.json",
-    "fonts/",
-    "engine/",
-    "integration/",
-    "README.md"
-  ],
-  "config": {
-    "webgl": {
-      "required": true,
-      "version": "2.0"
-    },
-    "audio": {
-      "required": true,
-      "webaudio": true
-    },
-    "performance": {
-      "targetFPS": 60,
-      "memoryLimit": "512MB"
-    }
-  },
-  "millionsongmind": {
-    "app": "chordcubes",
-    "version": "6.0.150",
-    "type": "3d-visualization",
-    "framework": "vanilla-js-webgl",
-    "deployment": {
-      "platform": "vercel",
-      "url": "https://millionsongmind.com/cubes",
-      "projectId": "prj_DmrWeDoPwY3z4pCopHLKJBd45Htb"
-    },
-    "features": [
-      "3d-rendering",
-      "chord-analysis",
-      "real-time-audio",
-      "interactive-ui",
-      "professional-tools"
-    ]
+    "vite": "^4.5.14"
   }
 }

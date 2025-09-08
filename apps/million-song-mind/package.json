@@ -1,16 +1,7 @@
 {
-  "name": "million-song-mind-v1",
-  "displayName": "Million Song Mind MSM1.0",
-  "description": "Professional React application for advanced music analysis with Harmonic Profile, Braid Pattern visualization, Song Search, and CSV Import capabilities. Developed for Christian developers.",
-  "version": "1.0.0",
-  "author": "Christian Developer Community",
-  "keywords": ["music-analysis", "react", "harmonic-profile", "braid-pattern", "christian-developers", "typescript", "vite"],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/christian-developers/Christian-Developer-Package.git",
-    "directory": "apps/million-song-mind"
-  },
-  "private": false,
+  "name": "vite_react_shadcn_ts",
+  "private": true,
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -50,7 +41,6 @@
     "@radix-ui/react-tooltip": "^1.2.7",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
-    "@tailwindcss/postcss": "^4.1.13",
     "@tanstack/react-query": "^5.83.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

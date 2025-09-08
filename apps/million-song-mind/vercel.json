@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "public": true,
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "alias": [
+        "millionsonmind.com",
+        "www.millionsonmind.com"
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/$1",
+            "headers": {
+                "X-Frame-Options": "SAMEORIGIN"
+            }
+        }
+    ],
+    "rewrites": [
+        { "source": "/MSM/(.*)", "destination": "/$1" }
+    ]
+}
